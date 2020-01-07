@@ -1,41 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import About from './About';
-import Shop from './Shop';
-import LeftMenu from './nav';
-import {BrowserRouter as Router, Link, Switch ,Route} from 'react-router-dom';
-import Vision from './About-us/Vision';
-import Company from './About-us/Company';
-import Team from './About-us/Team';
-import Portfolio from './About-us/Portfolio';
-
-function App() {
-  return (
-    <Router>
-    <div className="App">
-      <LeftMenu />
-      <switch>
-      <Route exact path='/' component={Home}/>
-      <Route path='/about' component={About} />
-      <Route path='/shop' component={Shop} />
-      <Route path='/vision' component={Vision} />
-      <Route path='/company' component={Company} />
-      <Route path='/team' component={Team} />
-      <Route path='/portfolio' component={Portfolio} />
-
-      </switch>
-    </div>
-    </Router>
-  );
+import React, { Component } from 'react';
+import { Menu } from 'antd';
+import {
+  
+  Link
+} from "react-router-dom";
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
+class LeftMenu extends Component {
+  render() {
+    return (
+   <Menu mode="horizontal" theme="dark">
+        <SubMenu title={<Link to="/about">About Us</Link>}>
+          <MenuItemGroup>
+          <Menu.Item key="setting:1"><Link to="/company"> Company </Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/vision"> Vision & Mission </Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/portfolio"> Portfolio </Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/team"> Team </Link></Menu.Item>
+          </MenuItemGroup>
+        </SubMenu>
+        <SubMenu title={<Link to="/shop">For Business</Link>}>
+        <SubMenu title="Who we are?">
+          </SubMenu>
+        <SubMenu title="What we offer"> 
+            <Menu.Item key="setting:1">Aerospace Solutions</Menu.Item>
+            <Menu.Item key="setting:1">Automobile Solutions</Menu.Item>
+            <Menu.Item key="setting:1">Energy Solutions</Menu.Item>
+            <Menu.Item key="setting:1">Corporate Solutions</Menu.Item>
+            <Menu.Item key="setting:1">E-Governance Solutions</Menu.Item>
+            <Menu.Item key="setting:1">Fintech Solutions</Menu.Item>
+          </SubMenu>
+          <SubMenu title="Products">
+          <SubMenu title="Hardware">
+          <Menu.Item key="setting:1">Drone Technology</Menu.Item>
+            <Menu.Item key="setting:1">Gaming</Menu.Item>
+            </SubMenu>
+            <SubMenu title="Software">
+          <Menu.Item key="setting:1">Drone Firmware Software</Menu.Item>
+            <Menu.Item key="setting:1">Alladin Payroll & HMIS</Menu.Item>
+            <Menu.Item key="setting:1">Pay-Alladin</Menu.Item>
+            </SubMenu>                  
+          </SubMenu>
+          <MenuItemGroup title="Services">
+            </MenuItemGroup>
+        </SubMenu>
+      </Menu>
+    );
+  }
 }
-
-const Home = ()=>(
-  <div>
-    <h1>Home Page</h1>
-  </div>
-)
-
-export default App;
-
-
+export default LeftMenu;
