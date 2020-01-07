@@ -1,50 +1,67 @@
-import React, { Component } from 'react';
-import { Menu } from 'antd';
-import {
-  
-  Link
-} from "react-router-dom";
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
-class LeftMenu extends Component {
-  render() {
-    return (
-   <Menu mode="horizontal" theme="dark">
-        <SubMenu title={<Link to="/about">About Us</Link>}>
-          <MenuItemGroup>
-          <Menu.Item key="setting:1"><Link to="/company"> Company </Link></Menu.Item>
-            <Menu.Item key="setting:1"><Link to="/vision"> Vision & Mission </Link></Menu.Item>
-            <Menu.Item key="setting:1"><Link to="/portfolio"> Portfolio </Link></Menu.Item>
-            <Menu.Item key="setting:1"><Link to="/team"> Team </Link></Menu.Item>
-          </MenuItemGroup>
-        </SubMenu>
-        <SubMenu title={<Link to="/shop">For Business</Link>}>
-        <SubMenu title="Who we are?">
-          </SubMenu>
-        <SubMenu title="What we offer"> 
-            <Menu.Item key="setting:1">Aerospace Solutions</Menu.Item>
-            <Menu.Item key="setting:1">Automobile Solutions</Menu.Item>
-            <Menu.Item key="setting:1">Energy Solutions</Menu.Item>
-            <Menu.Item key="setting:1">Corporate Solutions</Menu.Item>
-            <Menu.Item key="setting:1">E-Governance Solutions</Menu.Item>
-            <Menu.Item key="setting:1">Fintech Solutions</Menu.Item>
-          </SubMenu>
-          <SubMenu title="Products">
-          <SubMenu title="Hardware">
-          <Menu.Item key="setting:1">Drone Technology</Menu.Item>
-            <Menu.Item key="setting:1">Gaming</Menu.Item>
-            </SubMenu>
-            <SubMenu title="Software">
-          <Menu.Item key="setting:1">Drone Firmware Software</Menu.Item>
-            <Menu.Item key="setting:1">Alladin Payroll & HMIS</Menu.Item>
-            <Menu.Item key="setting:1">Pay-Alladin</Menu.Item>
-            </SubMenu>                  
-          </SubMenu>
-          <MenuItemGroup title="Services">
-            </MenuItemGroup>
-        </SubMenu>
-      </Menu>
-    );
-  }
+import React from 'react';
+import './App.css';
+import About from './About';
+import Shop from './Shop';
+import LeftMenu from './nav';
+import {BrowserRouter as Router ,Route} from 'react-router-dom';
+import Vision from './components/About-us/Vision';
+import Company from './components/About-us/Company';
+import Team from './components/About-us/Team';
+import Portfolio from './components/About-us/Portfolio';
+import Drone from './components/Products/Hardware/drone-tech';
+import Gaming from './components/Products/Hardware/gaming';
+import Firmware from './components/Products/Software/drone-firm-soft';
+import Alladin from './components/Products/Software/Alladin-pay-hmis';
+import Pay from './components/Products/Software/pay-alladin';
+import Aero_Space from './components/What we offer/aero-space-sol';
+import Automobile from './components/What we offer/automobile-sol';
+import Energy from './components/What we offer/energy-sol';
+import Corporate from './components/What we offer/corporate-sol';
+import E_Governace from './components/What we offer/e-governance-sol';
+import Fintech from './components/What we offer/fintech-sol';
+
+
+
+function App() {
+  return (
+    <Router>
+    <div className="App">
+      <LeftMenu />
+      <switch>
+
+       
+      <Route exact path='/' component={Home}/>
+      <Route path='/about' component={About} />
+      <Route path='/shop' component={Shop} />
+      <Route path='/vision' component={Vision} />
+      <Route path='/company' component={Company} />
+      <Route path='/team' component={Team} />
+      <Route path='/portfolio' component={Portfolio} />
+      <Route path='/drone' component={Drone} />
+      <Route path='/gaming' component={Gaming} />
+      <Route path='/firmware' component={Firmware} />
+      <Route path='/pay' component={Pay} />
+      <Route path='/alladin' component={Alladin} />
+
+      <Route path='/aeropace-solutions' component={Aero_Space} />
+      <Route path='/automobile-solutions' component={Automobile} />
+      <Route path='/energy-solutions' component={Energy} />
+      <Route path='/corporate-solutions' component={Corporate} />
+      <Route path='/e-governance-solutions' component={E_Governace} />
+      <Route path='/fintech-solutions' component={Fintech} />
+
+      </switch>
+    </div>
+    </Router>
+  );
 }
-export default LeftMenu;
+
+const Home = ()=>(
+  <div>
+    <h1>Home Page</h1>
+  </div>
+)
+
+export default App;
+
+

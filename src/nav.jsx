@@ -21,25 +21,25 @@ class LeftMenu extends Component {
         <SubMenu title={<Link to="/shop">For Business</Link>}>
         <SubMenu title="Who we are?">
           </SubMenu>
-        <SubMenu title="What we offer">
-            <Menu.Item key="setting:1">Aerospace Solutions</Menu.Item>
-            <Menu.Item key="setting:1">Automobile Solutions</Menu.Item>
-            <Menu.Item key="setting:1">Energy Solutions</Menu.Item>
-            <Menu.Item key="setting:1">Corporate Solutions</Menu.Item>
-            <Menu.Item key="setting:1">E-Governance Solutions</Menu.Item>
-            <Menu.Item key="setting:1">Fintech Solutions</Menu.Item>
+        <SubMenu title="What we offer"> 
+            <Menu.Item key="setting:1"><Link to="/aeropace-solutions">Aerospace Solutions</Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/automobile-solutions"> Automobile Solutions</Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/energy-solutions"> Energy Solutions</Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/corporate-solutions">Corporate Solutions</Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/e-governance-solutions">E-Governance Solutions</Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/fintech-solutions">Fintech Solutions</Link></Menu.Item>
           </SubMenu>
-          <MenuItemGroup title="Products">
+          <SubMenu title="Products">
           <SubMenu title="Hardware">
-          <Menu.Item key="setting:1">Drone Technology</Menu.Item>
-            <Menu.Item key="setting:1">Gaming</Menu.Item>
+          <Menu.Item key="setting:1"><Link to="/drone">Drone Technology</Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="/gaming">Gaming</Link></Menu.Item>
             </SubMenu>
             <SubMenu title="Software">
-          <Menu.Item key="setting:1">Drone Firmware Software</Menu.Item>
-            <Menu.Item key="setting:1">Alladin Payroll & HMIS</Menu.Item>
-            <Menu.Item key="setting:1">Pay-Alladin</Menu.Item>
+          <Menu.Item key="setting:1"><Link to="/firmware">Drone Firmware Software</Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="alladin">Alladin Payroll & HMIS</Link></Menu.Item>
+            <Menu.Item key="setting:1"><Link to="pay">Pay-Alladin</Link></Menu.Item>
             </SubMenu>                  
-          </MenuItemGroup>
+          </SubMenu>
           <MenuItemGroup title="Services">
             </MenuItemGroup>
         </SubMenu>
